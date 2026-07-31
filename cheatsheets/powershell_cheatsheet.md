@@ -8,7 +8,7 @@ Guía rápida de PowerShell organizada por secciones, con enfoque en cmdlets mod
 |---|---|---|
 | `Get-Help` | Muestra ayuda de un cmdlet | `Get-Help Get-ChildItem` |
 | `Get-Command` | Busca comandos, alias y funciones | `Get-Command *service*` |
-| `Get-Member` | Muestra propiedades y métodos de objetos | `Get-Process | Get-Member` |
+| `Get-Member` | Muestra propiedades y métodos de objetos | `Get-Process \| Get-Member` |
 | `Get-Alias` | Lista alias disponibles | `Get-Alias ls` |
 | `Update-Help` | Actualiza la ayuda local | `Update-Help` |
 
@@ -27,8 +27,8 @@ Guía rápida de PowerShell organizada por secciones, con enfoque en cmdlets mod
 | `Push-Location` | Guarda ubicación actual y cambia | `Push-Location C:\Temp` |
 | `Pop-Location` | Vuelve a la ubicación previa | `Pop-Location` |
 | `Get-ChildItem` | Lista archivos y carpetas | `Get-ChildItem -Force` |
-| `Resolve-Path` | Resuelve ruta absoluta | `Resolve-Path .rchivo.txt` |
-| `Split-Path` | Divide una ruta | `Split-Path C:\Temp.txt -Parent` |
+| `Resolve-Path` | Resuelve ruta absoluta | `Resolve-Path .archivo.txt` |
+| `Split-Path` | Divide una ruta | `Split-Path C:\Tempa.txt -Parent` |
 | `Join-Path` | Une rutas | `Join-Path C:\Temp a.txt` |
 
 ### Equivalencias útiles
@@ -41,17 +41,17 @@ Guía rápida de PowerShell organizada por secciones, con enfoque en cmdlets mod
 | Comando | Qué hace | Ejemplo |
 |---|---|---|
 | `New-Item` | Crea archivo o carpeta | `New-Item -ItemType Directory -Path .\logs` |
-| `Copy-Item` | Copia archivos o carpetas | `Copy-Item ..txt D:\Backup\` |
-| `Move-Item` | Mueve o renombra | `Move-Item ..txt ..txt` |
+| `Copy-Item` | Copia archivos o carpetas | `Copy-Item .a.txt D:\Backup\` |
+| `Move-Item` | Mueve o renombra | `Move-Item .a.txt .b.txt` |
 | `Remove-Item` | Borra archivos o carpetas | `Remove-Item .	emp -Recurse -Force` |
-| `Rename-Item` | Renombra elemento | `Rename-Item .iejo.txt nuevo.txt` |
+| `Rename-Item` | Renombra elemento | `Rename-Item .viejo.txt nuevo.txt` |
 | `Test-Path` | Comprueba si existe | `Test-Path .\config.json` |
 | `Get-Item` | Obtiene un elemento concreto | `Get-Item .\config.json` |
-| `Get-Content` | Lee contenido de un archivo | `Get-Content .pp.log -Tail 20` |
+| `Get-Content` | Lee contenido de un archivo | `Get-Content .app.log -Tail 20` |
 | `Set-Content` | Escribe contenido nuevo | `Set-Content .\hola.txt 'Hola'` |
-| `Add-Content` | Añade contenido al final | `Add-Content .pp.log 'Nueva línea'` |
-| `Clear-Content` | Vacía el contenido | `Clear-Content .pp.log` |
-| `Out-File` | Redirige salida a archivo | `Get-Process | Out-File .\procesos.txt` |
+| `Add-Content` | Añade contenido al final | `Add-Content .app.log 'Nueva línea'` |
+| `Clear-Content` | Vacía el contenido | `Clear-Content .app.log` |
+| `Out-File` | Redirige salida a archivo | `Get-Process \| Out-File .\procesos.txt` |
 
 ### Ejemplos prácticos
 
@@ -59,7 +59,7 @@ Guía rápida de PowerShell organizada por secciones, con enfoque en cmdlets mod
 New-Item -ItemType Directory -Path .\proyecto
 New-Item -ItemType File -Path .
 otas.txt
-Copy-Item .\origen.txt .ackupRemove-Item .\cache -Recurse -Force
+Copy-Item .\origen.txt .backupRemove-Item .\cache -Recurse -Force
 Get-Content .\log.txt -Tail 50 -Wait
 ```
 
@@ -68,10 +68,10 @@ Get-Content .\log.txt -Tail 50 -Wait
 | Comando | Qué hace | Ejemplo |
 |---|---|---|
 | `Select-String` | Busca texto en archivos o entrada | `Select-String -Path .\*.log -Pattern 'error'` |
-| `Where-Object` | Filtra objetos por condición | `Get-Process | Where-Object CPU -gt 10` |
-| `Sort-Object` | Ordena objetos | `Get-Process | Sort-Object CPU -Descending` |
-| `Select-Object` | Selecciona propiedades | `Get-Process | Select-Object Name, CPU` |
-| `Measure-Object` | Cuenta, suma, promedio, min/max | `Get-Content ..txt | Measure-Object -Line` |
+| `Where-Object` | Filtra objetos por condición | `Get-Process \| Where-Object CPU -gt 10` |
+| `Sort-Object` | Ordena objetos | `Get-Process \| Sort-Object CPU -Descending` |
+| `Select-Object` | Selecciona propiedades | `Get-Process \| Select-Object Name, CPU` |
+| `Measure-Object` | Cuenta, suma, promedio, min/max | `Get-Content .a.txt \| Measure-Object -Line` |
 | `Compare-Object` | Compara dos colecciones | `Compare-Object (Get-Content a.txt) (Get-Content b.txt)` |
 
 ### Ejemplos útiles
@@ -79,7 +79,7 @@ Get-Content .\log.txt -Tail 50 -Wait
 ```powershell
 Get-ChildItem -Recurse -File | Where-Object Length -gt 1GB
 Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 10
-Get-Content .pp.log | Select-String -Pattern 'WARN|ERROR'
+Get-Content .app.log | Select-String -Pattern 'WARN|ERROR'
 ```
 
 ## 5. Procesos y servicios
@@ -154,24 +154,25 @@ Resolve-DnsName microsoft.com
 | Comando | Qué hace | Ejemplo |
 |---|---|---|
 | `Get-FileHash` | Calcula hash | `Get-FileHash .\imagen.iso -Algorithm SHA256` |
-| `Get-ItemProperty` | Lee propiedades de un archivo o clave | `Get-ItemProperty .rchivo.txt` |
+| `Get-ItemProperty` | Lee propiedades de un archivo o clave | `Get-ItemProperty .archivo.txt` |
 | `Get-ChildItem -File` | Lista solo archivos | `Get-ChildItem -File` |
 | `Get-ChildItem -Directory` | Lista solo carpetas | `Get-ChildItem -Directory` |
-| `Get-ACL` | Muestra ACL/permisos | `Get-ACL .rchivo.txt` |
-| `Set-ACL` | Aplica ACL/permisos | `Set-ACL .rchivo.txt $acl` |
+| `Get-ACL` | Muestra ACL/permisos | `Get-ACL .archivo.txt` |
+| `Set-ACL` | Aplica ACL/permisos | `Set-ACL .archivo.txt $acl` |
 
 ## 9. Compresión y archivado
 
 | Comando | Qué hace | Ejemplo |
 |---|---|---|
-| `Compress-Archive` | Crea ZIP | `Compress-Archive .\carpeta .ackup.zip` |
-| `Expand-Archive` | Extrae ZIP | `Expand-Archive .ackup.zip .\destino` |
+| `Compress-Archive` | Crea ZIP | `Compress-Archive .\carpeta .backup.zip` |
+| `Expand-Archive` | Extrae ZIP | `Expand-Archive .backup.zip .\destino` |
 
 ### Ejemplos prácticos
 
 ```powershell
 Compress-Archive -Path .\proyecto\* -DestinationPath .\proyecto.zip
-Expand-Archive -Path .\proyecto.zip -DestinationPath .estaurado
+Expand-Archive -Path .\proyecto.zip -DestinationPath .
+estaurado
 ```
 
 ## 10. Variables y shell
@@ -194,7 +195,7 @@ Expand-Archive -Path .\proyecto.zip -DestinationPath .estaurado
 | Comando | Qué hace | Ejemplo |
 |---|---|---|
 | `If / ElseIf / Else` | Control condicional | `if ($x -gt 5) { ... }` |
-| `ForEach-Object` | Itera flujo de objetos | `Get-ChildItem | ForEach-Object { $_.Name }` |
+| `ForEach-Object` | Itera flujo de objetos | `Get-ChildItem \| ForEach-Object { $_.Name }` |
 | `For` | Bucle clásico | `for ($i=0; $i -lt 10; $i++) {}` |
 | `While` | Bucle condicional | `while ($true) {}` |
 | `Switch` | Selección por casos | `switch ($x) { 1 { ... } }` |
@@ -233,7 +234,7 @@ Main
 | `Invoke-Command` | Ejecuta comandos remotos | `Invoke-Command -ComputerName srv1 -ScriptBlock { Get-Service }` |
 | `Enter-PSSession` | Abre sesión interactiva remota | `Enter-PSSession -ComputerName srv1` |
 | `New-PSSession` | Crea sesión persistente | `New-PSSession -ComputerName srv1` |
-| `Copy-Item -ToSession` | Copia a sesión remota | `Copy-Item ..txt -ToSession $s -Destination C:\Temp` |
+| `Copy-Item -ToSession` | Copia a sesión remota | `Copy-Item .a.txt -ToSession $s -Destination C:\Temp` |
 | `Remove-PSSession` | Cierra sesión remota | `Remove-PSSession $s` |
 
 ## 13. Seguridad y permisos
@@ -246,7 +247,7 @@ Main
 | `Get-LocalGroup` | Grupos locales | `Get-LocalGroup` |
 | `Get-LocalGroupMember` | Miembros de grupo | `Get-LocalGroupMember Administrators` |
 | `Add-LocalGroupMember` | Añade usuario a grupo | `Add-LocalGroupMember -Group Administrators -Member user` |
-| `Get-NetFirewallRule` | Reglas de firewall | `Get-NetFirewallRule | Select-Object DisplayName, Enabled` |
+| `Get-NetFirewallRule` | Reglas de firewall | `Get-NetFirewallRule \| Select-Object DisplayName, Enabled` |
 | `Enable-NetFirewallRule` | Activa regla | `Enable-NetFirewallRule -DisplayGroup 'File and Printer Sharing'` |
 | `New-NetFirewallRule` | Crea regla | `New-NetFirewallRule -DisplayName 'Allow HTTPS' -Direction Inbound -Protocol TCP -LocalPort 443 -Action Allow` |
 
@@ -265,12 +266,12 @@ Main
 
 | Comando | Qué hace | Ejemplo |
 |---|---|---|
-| `Format-Table` | Formatea como tabla | `Get-Process | Format-Table Name, CPU` |
-| `Format-List` | Formato de lista | `Get-Service | Format-List *` |
-| `Export-Csv` | Exporta a CSV | `Get-Process | Export-Csv .\procesos.csv -NoTypeInformation` |
+| `Format-Table` | Formatea como tabla | `Get-Process \| Format-Table Name, CPU` |
+| `Format-List` | Formato de lista | `Get-Service \| Format-List *` |
+| `Export-Csv` | Exporta a CSV | `Get-Process \| Export-Csv .\procesos.csv -NoTypeInformation` |
 | `Import-Csv` | Importa CSV | `Import-Csv .\procesos.csv` |
-| `ConvertTo-Json` | Convierte a JSON | `Get-Process | Select-Object -First 1 | ConvertTo-Json` |
-| `ConvertFrom-Json` | Lee JSON | `Get-Content .\data.json | ConvertFrom-Json` |
+| `ConvertTo-Json` | Convierte a JSON | `Get-Process \| Select-Object -First 1 \| ConvertTo-Json` |
+| `ConvertFrom-Json` | Lee JSON | `Get-Content .\data.json \| ConvertFrom-Json` |
 
 ## 16. Acciones frecuentes rápidas
 
@@ -319,12 +320,12 @@ Get-Location
 Set-Location C:\Windows
 Get-ChildItem -Force
 New-Item -ItemType Directory -Path .\logs
-Copy-Item ..txt D:\BackupRemove-Item .	emp -Recurse -Force
-Get-Content .pp.log -Tail 20
+Copy-Item .a.txt D:\BackupRemove-Item .	emp -Recurse -Force
+Get-Content .app.log -Tail 20
 Select-String -Path .\*.log -Pattern 'error'
 Get-Process | Sort-Object CPU -Descending | Select-Object -First 5
 Get-Service
 Restart-Service Spooler
 Test-NetConnection localhost -Port 443
-Get-FileHash .rchivo.iso -Algorithm SHA256
+Get-FileHash .archivo.iso -Algorithm SHA256
 ```
