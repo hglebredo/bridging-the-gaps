@@ -2,6 +2,26 @@
 
 Guía rápida de PowerShell organizada por secciones, con enfoque en cmdlets modernos y evitando comandos CMD/DOS cuando exista equivalente en PowerShell.
 
+## Índice
+
+- [1. Ayuda y descubrimiento](#1-ayuda-y-descubrimiento)
+- [2. Navegación y ubicación](#2-navegación-y-ubicación)
+- [3. Archivos y carpetas](#3-archivos-y-carpetas)
+- [4. Búsqueda y filtrado](#4-búsqueda-y-filtrado)
+- [5. Procesos y servicios](#5-procesos-y-servicios)
+- [6. Red y conectividad](#6-red-y-conectividad)
+- [7. Sistema e inventario](#7-sistema-e-inventario)
+- [8. Archivos y hash](#8-archivos-y-hash)
+- [9. Compresión y archivado](#9-compresión-y-archivado)
+- [10. Variables y shell](#10-variables-y-shell)
+- [11. Scripts y control](#11-scripts-y-control)
+- [12. Automatización remota](#12-automatización-remota)
+- [13. Seguridad y permisos](#13-seguridad-y-permisos)
+- [14. Paquetes y módulos](#14-paquetes-y-módulos)
+- [15. Formato y exportación](#15-formato-y-exportación)
+- [16. Acciones frecuentes rápidas](#16-acciones-frecuentes-rápidas)
+- [17. Comandos que conviene memorizar primero](#17-comandos-que-conviene-memorizar-primero)
+
 ## 1. Ayuda y descubrimiento
 
 | Comando | Qué hace | Ejemplo |
@@ -14,8 +34,8 @@ Guía rápida de PowerShell organizada por secciones, con enfoque en cmdlets mod
 
 ### Tip rápido
 
-- Usa `Get-Help comando -Examples` para ver ejemplos.
-- Usa `Get-Help comando -Full` para detalle completo.
+- Usar `Get-Help comando -Examples` para ver ejemplos.
+- Usar `Get-Help comando -Full` para detalle completo.
 - En PowerShell, casi todo devuelve objetos, no solo texto.
 
 ## 2. Navegación y ubicación
@@ -222,10 +242,10 @@ Main
 
 ### Buenas prácticas
 
-- Usa nombres claros para funciones y parámetros.
-- Prefiere `Get-Command`, `Get-Help` y `Get-Member` mientras aprendes.
-- Evita parsear texto si puedes trabajar con objetos.
-- Usa `try/catch` para scripts robustos.
+- Usar nombres claros para funciones y parámetros.
+- Preferir `Get-Command`, `Get-Help` y `Get-Member` durante el aprendizaje.
+- Evitar parsear texto cuando se puede trabajar con objetos.
+- Usar `try/catch` para scripts robustos.
 
 ## 12. Automatización remota
 
