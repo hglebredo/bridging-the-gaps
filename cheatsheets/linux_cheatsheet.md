@@ -68,9 +68,9 @@ Guía rápida de comandos Linux organizada por secciones, con ejemplos práctico
 
 ### Tips rápidos
 
-- Usa `cp -a` para preservar permisos y atributos.
-- Usa `mv -i`, `cp -i` o `rm -i` para pedir confirmación.
-- Mucho cuidado con `rm -rf`, especialmente si ejecutas como root.
+- `cp -a` preserva permisos y atributos.
+- `mv -i`, `cp -i` o `rm -i` piden confirmación antes de actuar.
+- Mucho cuidado con `rm -rf`, especialmente al ejecutarlo como root.
 
 [↑ ir al índice](#índice)
 
@@ -383,10 +383,10 @@ main "$@"
 
 ### Buenas prácticas
 
-- Usa `set -euo pipefail` en scripts serios.
-- Cita variables: `"$VAR"`.
-- Prefiere `$(comando)` frente a backticks.
-- Valida dependencias con `command -v`.
+- Conviene usar `set -euo pipefail` en scripts serios.
+- Las variables se citan con `"$VAR"`.
+- Se prefiere `$(comando)` frente a backticks.
+- Las dependencias se validan con `command -v`.
 
 [↑ ir al índice](#índice)
 
@@ -553,10 +553,10 @@ find / -type f -size +1G 2>/dev/null
 
 ## 22. Recomendaciones de uso
 
-- Empieza por versiones seguras: `cp -i`, `mv -i`, `rm -i`.
-- Usa `man comando` o `comando --help` para profundizar.
-- Encadena comandos con pipes para explotar la shell al máximo.
-- Guarda aliases y funciones útiles en `~/.bashrc` o `~/.zshrc`.
+- Empezar por versiones seguras: `cp -i`, `mv -i`, `rm -i`.
+- Usar `man comando` o `comando --help` para profundizar.
+- Encadenar comandos con pipes para explotar la shell al máximo.
+- Guardar aliases y funciones útiles en `~/.bashrc` o `~/.zshrc`.
 - Para administración moderna, merece la pena dominar bien `ss`, `journalctl`, `find`, `grep`, `awk`, `sed`, `curl`, `jq`, `rsync` y `systemctl`.
 
 [↑ ir al índice](#índice)

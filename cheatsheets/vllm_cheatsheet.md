@@ -382,7 +382,7 @@ vllm run-batch -i input.jsonl -o results.jsonl --model meta-llama/Meta-Llama-3-8
 
 ## 21. Buenas prácticas rápidas
 
-- Usa `vllm serve --help=all` antes de tocar flags menos comunes.
-- Si quieres resultados coherentes con defaults propios de vLLM, desactiva el `generation_config.json` del repositorio con `--generation-config vllm`.
+- Conviene usar `vllm serve --help=all` antes de tocar flags menos comunes.
+- Para resultados coherentes con defaults propios de vLLM, desactivar el `generation_config.json` del repositorio con `--generation-config vllm`.
 - Para benchmark, instala `vllm[bench]` y separa latencia, serving y throughput offline según el caso.
 - Para clientes existentes con SDK OpenAI, normalmente basta con cambiar `base_url` y apuntarlo al endpoint de vLLM.
