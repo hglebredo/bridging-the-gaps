@@ -2,6 +2,33 @@
 
 Guía rápida de comandos Linux organizada por secciones, con ejemplos prácticos y algunos comandos extra útiles listos para su uso. Además de secciones concretas acerca de administración de sistemas, automatización y troubleshooting.
 
+## Índice
+
+- [1. Navegación básica](#1-navegación-básica)
+- [2. Gestión de archivos y directorios](#2-gestión-de-archivos-y-directorios)
+- [3. Visualización y edición](#3-visualización-y-edición)
+- [4. Búsqueda](#4-búsqueda)
+- [5. Permisos y propiedad](#5-permisos-y-propiedad)
+- [6. Usuarios y grupos](#6-usuarios-y-grupos)
+- [7. Procesos y jobs](#7-procesos-y-jobs)
+- [8. Monitorización del sistema](#8-monitorización-del-sistema)
+- [9. Red](#9-red)
+- [10. Disco, particiones y almacenamiento](#10-disco-particiones-y-almacenamiento)
+- [11. Paquetes y repositorios](#11-paquetes-y-repositorios)
+- [12. Compresión y archivos](#12-compresión-y-archivos)
+- [13. Procesamiento de texto](#13-procesamiento-de-texto)
+- [14. Shell scripting](#14-shell-scripting)
+- [15. Systemd y servicios](#15-systemd-y-servicios)
+- [16. DevOps y contenedores](#16-devops-y-contenedores)
+- [17. SSH y transferencia](#17-ssh-y-transferencia)
+- [18. Variables de entorno y shell](#18-variables-de-entorno-y-shell)
+- [19. Comandos extra muy útiles](#19-comandos-extra-muy-útiles)
+- [20. Atajos de terminal](#20-atajos-de-terminal)
+- [21. Troubleshooting rápido](#21-troubleshooting-rápido)
+- [22. Recomendaciones de uso](#22-recomendaciones-de-uso)
+- [23. Comandos que conviene memorizar primero](#23-comandos-que-conviene-memorizar-primero)
+- [24. Firewall básico](#24-firewall-básico)
+
 ## 1. Navegación básica
 
 | Comando | Qué hace | Ejemplo |
@@ -21,6 +48,8 @@ Guía rápida de comandos Linux organizada por secciones, con ejemplos práctico
 - `ls -lh` muestra tamaños legibles.
 - `ls -ltr` ordena por fecha, dejando lo más reciente al final.
 
+[↑ ir al índice](#índice)
+
 ## 2. Gestión de archivos y directorios
 
 | Comando | Qué hace | Ejemplo |
@@ -39,9 +68,11 @@ Guía rápida de comandos Linux organizada por secciones, con ejemplos práctico
 
 ### Tips rápidos
 
-- Usa `cp -a` para preservar permisos y atributos.
-- Usa `mv -i`, `cp -i` o `rm -i` para pedir confirmación.
-- Mucho cuidado con `rm -rf`, especialmente si ejecutas como root.
+- `cp -a` preserva permisos y atributos.
+- `mv -i`, `cp -i` o `rm -i` piden confirmación antes de actuar.
+- Mucho cuidado con `rm -rf`, especialmente al ejecutarlo como root.
+
+[↑ ir al índice](#índice)
 
 ## 3. Visualización y edición
 
@@ -63,6 +94,8 @@ Guía rápida de comandos Linux organizada por secciones, con ejemplos práctico
 - `n`: siguiente coincidencia.
 - `G`: ir al final.
 - `g`: ir al inicio.
+
+[↑ ir al índice](#índice)
 
 ## 4. Búsqueda
 
@@ -87,6 +120,8 @@ find / -type f -size +500M 2>/dev/null
 grep -R "password" /etc 2>/dev/null
 rg "apiKey|token|secret" .
 ```
+
+[↑ ir al índice](#índice)
 
 ## 5. Permisos y propiedad
 
@@ -120,6 +155,8 @@ rg "apiKey|token|secret" .
 - `chmod -R 750 carpeta/`: aplica permisos recursivos.
 - `chown -R www-data:www-data /var/www/app`: cambia dueño y grupo recursivamente.
 
+[↑ ir al índice](#índice)
+
 ## 6. Usuarios y grupos
 
 | Comando | Qué hace | Ejemplo |
@@ -135,6 +172,8 @@ rg "apiKey|token|secret" .
 | `last` | Muestra últimos logins | `last` |
 | `who` | Usuarios conectados | `who` |
 | `w` | Quién está conectado y qué hace | `w` |
+
+[↑ ir al índice](#índice)
 
 ## 7. Procesos y jobs
 
@@ -164,6 +203,8 @@ rg "apiKey|token|secret" .
 | `-9` / `SIGKILL` | Finalización forzada |
 | `-15` / `SIGTERM` | Finalización ordenada |
 
+[↑ ir al índice](#índice)
+
 ## 8. Monitorización del sistema
 
 | Comando | Qué hace | Ejemplo |
@@ -187,6 +228,8 @@ journalctl -u nginx -n 100 --no-pager
 watch -n 1 "df -h && free -h"
 lsof /var/log/app.log
 ```
+
+[↑ ir al índice](#índice)
 
 ## 9. Red
 
@@ -215,6 +258,8 @@ ip route get 8.8.8.8
 dig +short google.com
 ```
 
+[↑ ir al índice](#índice)
+
 ## 10. Disco, particiones y almacenamiento
 
 | Comando | Qué hace | Ejemplo |
@@ -231,6 +276,8 @@ dig +short google.com
 | `mkfs.ext4` | Formatea ext4 | `sudo mkfs.ext4 /dev/sdb1` |
 | `tune2fs` | Ajustes/info de ext filesystems | `sudo tune2fs -l /dev/sdb1` |
 | `fstrim` | Lanza trim en SSD | `sudo fstrim -av` |
+
+[↑ ir al índice](#índice)
 
 ## 11. Paquetes y repositorios
 
@@ -259,6 +306,8 @@ dig +short google.com
 | `snap` | `sudo snap install code --classic` |
 | `flatpak` | `flatpak install flathub org.mozilla.firefox` |
 
+[↑ ir al índice](#índice)
+
 ## 12. Compresión y archivos
 
 | Comando | Qué hace | Ejemplo |
@@ -274,6 +323,8 @@ dig +short google.com
 | `gunzip` | Descomprime gzip | `gunzip archivo.log.gz` |
 | `xz` | Compresión alta | `xz archivo.img` |
 | `7z` | Formato 7zip | `7z a backup.7z directorio/` |
+
+[↑ ir al índice](#índice)
 
 ## 13. Procesamiento de texto
 
@@ -300,6 +351,8 @@ journalctl -u ssh --since today | grep Failed
 cut -d: -f1 /etc/passwd | sort
 cat access.log | awk '{print $1}' | sort | uniq -c | sort -nr | head
 ```
+
+[↑ ir al índice](#índice)
 
 ## 14. Shell scripting
 
@@ -330,10 +383,12 @@ main "$@"
 
 ### Buenas prácticas
 
-- Usa `set -euo pipefail` en scripts serios.
-- Cita variables: `"$VAR"`.
-- Prefiere `$(comando)` frente a backticks.
-- Valida dependencias con `command -v`.
+- Conviene usar `set -euo pipefail` en scripts serios.
+- Las variables se citan con `"$VAR"`.
+- Se prefiere `$(comando)` frente a backticks.
+- Las dependencias se validan con `command -v`.
+
+[↑ ir al índice](#índice)
 
 ## 15. Systemd y servicios
 
@@ -365,6 +420,8 @@ User=www-data
 WantedBy=multi-user.target
 ```
 
+[↑ ir al índice](#índice)
+
 ## 16. DevOps y contenedores
 
 | Comando | Qué hace | Ejemplo |
@@ -381,6 +438,8 @@ WantedBy=multi-user.target
 | `kubectl describe pod` | Describe pod | `kubectl describe pod mi-pod` |
 | `kubectl logs -f` | Logs de pod | `kubectl logs -f deployment/api` |
 | `kubectl exec -it` | Shell en pod | `kubectl exec -it mi-pod -- sh` |
+
+[↑ ir al índice](#índice)
 
 ## 17. SSH y transferencia
 
@@ -400,6 +459,8 @@ rsync -avz --delete ./build/ usuario@host:/var/www/html/
 scp -r proyecto/ usuario@host:/opt/
 ```
 
+[↑ ir al índice](#índice)
+
 ## 18. Variables de entorno y shell
 
 | Comando | Qué hace | Ejemplo |
@@ -411,6 +472,8 @@ scp -r proyecto/ usuario@host:/opt/
 | `alias` | Crea alias | `alias ll='ls -lah'` |
 | `history` | Historial de comandos | `history \| tail` |
 | `source` | Recarga archivo en shell actual | `source ~/.bashrc` |
+
+[↑ ir al índice](#índice)
 
 ## 19. Comandos extra muy útiles
 
@@ -428,6 +491,8 @@ scp -r proyecto/ usuario@host:/opt/
 | `seq` | Genera secuencias | `seq 1 10` |
 | `yes` | Repite texto continuamente | `yes \| head` |
 
+[↑ ir al índice](#índice)
+
 ## 20. Atajos de terminal
 
 | Atajo | Acción |
@@ -442,6 +507,8 @@ scp -r proyecto/ usuario@host:/opt/
 | `!!` | Repite último comando |
 | `!n` | Repite comando n del historial |
 | `!cadena` | Repite último que empieza por cadena |
+
+[↑ ir al índice](#índice)
 
 ## 21. Troubleshooting rápido
 
@@ -482,13 +549,17 @@ curl -I https://example.com
 find / -type f -size +1G 2>/dev/null
 ```
 
+[↑ ir al índice](#índice)
+
 ## 22. Recomendaciones de uso
 
-- Empieza por versiones seguras: `cp -i`, `mv -i`, `rm -i`.
-- Usa `man comando` o `comando --help` para profundizar.
-- Encadena comandos con pipes para explotar la shell al máximo.
-- Guarda aliases y funciones útiles en `~/.bashrc` o `~/.zshrc`.
+- Empezar por versiones seguras: `cp -i`, `mv -i`, `rm -i`.
+- Usar `man comando` o `comando --help` para profundizar.
+- Encadenar comandos con pipes para explotar la shell al máximo.
+- Guardar aliases y funciones útiles en `~/.bashrc` o `~/.zshrc`.
 - Para administración moderna, merece la pena dominar bien `ss`, `journalctl`, `find`, `grep`, `awk`, `sed`, `curl`, `jq`, `rsync` y `systemctl`.
+
+[↑ ir al índice](#índice)
 
 ## 23. Comandos que conviene memorizar primero
 
@@ -509,6 +580,8 @@ rsync -avz origen/ destino/
 chmod +x script.sh
 ps aux | grep proceso
 ```
+
+[↑ ir al índice](#índice)
 
 ## 24. Firewall básico
 
