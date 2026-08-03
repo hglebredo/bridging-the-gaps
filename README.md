@@ -4,9 +4,9 @@ Múltiples cheatsheets que hacen la informática más simple y cercana para todo
 
 ## ¿Por qué este repositorio?
 
-El mundo de la administración de sistemas abarca herramientas y entornos muy distintos: Linux y Windows, shells y cmdlets, on-premise y cloud. A menudo los conocimientos están dispersos en cientos de páginas de documentación y cuesta recordar el comando exacto en el momento justo.
+A menudo los conocimientos están dispersos en documentación y puede que falte ese comando que se necesita en el momento justo.
 
-Este repositorio reúne guías rápidas, concisas y prácticas, organizadas por secciones, para cubrir ese hueco: consultar lo esencial de una herramienta sin perder tiempo. Cada cheatsheet está pensada para el uso diario, con ejemplos reales y trucos útiles listos para copiar.
+Este repositorio reúne guías rápidas, concisas y prácticas, organizadas por secciones, para cubrir esa necesidad: consultar lo esencial de una herramienta sin perder tiempo. Cada cheatsheet está pensada la utilización rápida, con ejemplos reales y trucos útiles listos para copiar.
 
 ## Cheatsheets
 
