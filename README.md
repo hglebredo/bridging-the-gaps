@@ -12,9 +12,9 @@ Este repositorio reúne guías rápidas, concisas y prácticas, organizadas por 
 
 | Cheatsheet | Contenido |
 |---|---|
-| [Git & GitHub](cheatsheets/git_cheatsheet.md) | Control de versiones con Git y GitHub: configuración, ramas, remotos, historial, deshacer cambios, GitHub CLI (`gh`) y pull requests. |
 | [Linux](cheatsheets/linux_cheatsheet.md) | Comandos esenciales de Linux: navegación, permisos, procesos, red, almacenamiento, systemd, contenedores y troubleshooting. |
 | [PowerShell](cheatsheets/powershell_cheatsheet.md) | Cmdlets modernos de PowerShell: ayuda, archivos, procesos y servicios, red, inventario, scripting y automatización remota. |
+| [Git & GitHub](cheatsheets/git_cheatsheet.md) | Control de versiones con Git y GitHub: configuración, ramas, remotos, historial, deshacer cambios, GitHub CLI (`gh`) y pull requests. |
 | [vLLM](cheatsheets/vllm_cheatsheet.md) | Motor de inferencia y serving de LLMs: instalación, CLI, serving OpenAI-compatible, benchmarks e inferencia batch. |
 
 ## Cómo contribuir
